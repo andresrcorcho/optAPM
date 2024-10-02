@@ -30,7 +30,7 @@ datadir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'data', '')
 #data_model = 'Global_Model_WD_Internal_Release_2019_v2'
 #data_model = 'Global_Model_WD_Internal_Release-EarthBytePlateMotionModel-TRUNK'
 #data_model = 'SM2-Merdith_et_al_1_Ga_reconstruction_v1.1'
-data_model = '1.8Ga_model_GSF'
+data_model = 'WNA_optimisation_V1'
 
 
 # The model name is suffixed to various output filenames.
@@ -45,7 +45,7 @@ elif '1.8ga' in data_model.lower():
 elif data_model.startswith('SM2-Merdith_et_al_1_Ga_reconstruction'):
     model_name = "git_20231114_run1"
 else:
-    model_name = "run1"
+    model_name = "CombinedRotations_run1"
 
 
 # Start age.
@@ -160,7 +160,8 @@ elif data_model == 'Zahirovic_etal_2022_GDJ':
 elif '1.8ga' in data_model.lower():
     plate_velocity_continental_polygons_file = data_model + '/shapes_continents.gpmlz'
 else:
-    plate_velocity_continental_polygons_file = None
+    plate_velocity_continental_polygons_file = data_model + '/StaticGeometries/ContinentalPolygons/
+    #plate_velocity_continental_polygons_file = None
 
 # The grid spacing (in degrees) between points in the grid used for plate velocity calculations (when plate velocity is enabled).
 plate_velocity_grid_spacing = 2.0
@@ -242,9 +243,12 @@ else:
     #
     # Original files used in original optimisation script...
     #
-    ridge_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_Ridges.gpml'
-    isochron_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_Isochrons.gpmlz'
-    isocob_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_IsoCOB.gpml'
+    ridge_file = data_model + '/StaticGeometries/AgeGridInput/Global_EarthByte_GeeK07_Ridges.gpml'
+    isochron_file = data_model + '/StaticGeometries/AgeGridInput/Global_EarthByte_GeeK07_Isochrons.gpml'
+    isocob_file = data_model + '/StaticGeometries/AgeGridInput/Global_EarthByte_GeeK07_IsoCOB.gpml'
+    #ridge_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_Ridges.gpml'
+    #isochron_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_Isochrons.gpmlz'
+    #isocob_file = 'Global_EarthByte_230-0Ma_GK07_AREPS_IsoCOB.gpml'
 
 
 #
@@ -517,8 +521,8 @@ use_trail_age_uncertainty = True
 # Millions of years - e.g. 2 million years @ 50mm per year = 100km radius uncertainty ellipse
 trail_age_uncertainty_ellipse = 1
 
-include_chains = ['Louisville', 'Tristan', 'Reunion', 'St_Helena', 'Foundation', 'Cobb', 'Samoa', 'Tasmantid', 
-                  'Hawaii']
+include_chains = ['Louisville', 'Tristan', 'Reunion', 'St_Helena', 'Foundation', 'Cobb', 'Samoa', 'Tasmantid'] 
+                 # 'Hawaii']
 #include_chains = ['Louisville', 'Tristan', 'Reunion', 'Hawaii', 'St_Helena', 'Tasmantid']
 
 
