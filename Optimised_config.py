@@ -160,7 +160,7 @@ elif data_model == 'Zahirovic_etal_2022_GDJ':
 elif '1.8ga' in data_model.lower():
     plate_velocity_continental_polygons_file = data_model + '/shapes_continents.gpmlz'
 else:
-    plate_velocity_continental_polygons_file = data_model + '/StaticGeometries/ContinentalPolygons/
+    plate_velocity_continental_polygons_file = data_model + '/StaticGeometries/ContinentalPolygons/Global_EarthByte_GPlates_PresentDay_ContinentsAndArcs.shp'
     #plate_velocity_continental_polygons_file = None
 
 # The grid spacing (in degrees) between points in the grid used for plate velocity calculations (when plate velocity is enabled).
