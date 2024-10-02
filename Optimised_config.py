@@ -373,7 +373,7 @@ def get_trench_migration_params(age):
             # NOTE: These are inverse weights (ie, the constraint costs are *multiplied* by "1.0 / weight").
             return True, 2.0, cost_function, tm_bounds  # 2.0 gives a *multiplicative* weight of 0.5
     else:
-        return True, 1.0, cost_function, None
+        return True, 2.0, cost_function, None
 
 def get_hotspot_trail_params(age):
     # Cost function - see "objective_function.py" for definition of function arguments...
@@ -450,7 +450,7 @@ def get_plate_velocity_params(age):
         else:
             return True, 2.0, cost_function, pv_bounds  # 2.0 gives a *multiplicative* weight of 0.5
     else:
-        return True, 1.0, cost_function, None
+        return True, 2.0, cost_function, None
 
 
 #
